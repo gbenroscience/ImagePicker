@@ -37,7 +37,9 @@ Either way, add your own configuration by doing:
  ```
  
  
- ![Here is a video of the cropping action](https://youtu.be/K14-8D27Xvc)
+ ![](https://youtu.be/K14-8D27Xvc)
+ 
+ <a href="https://youtu.be/K14-8D27Xvc" target="_blank"></a>
  
   
 
