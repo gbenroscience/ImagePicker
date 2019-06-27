@@ -29,8 +29,8 @@
             android:label="@string/title_activity_scaler"
             android:theme="@style/FullscreenTheme" />
         <provider
-            android:name="androidx.core.content.FileProvider"
-            android:authorities="com.itis.libs.imagepick.fileprovider"
+            android:name="com.itis.libs.imagepick.utils.PictureProvider"
+            android:authorities="${applicationId}.pictures.fileprovider"
             android:enabled="true"
             android:exported="false"
             android:grantUriPermissions="true">

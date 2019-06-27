@@ -24,7 +24,7 @@ import androidx.core.content.FileProvider;
 public class Utils {
 
 
-    public static final String BASE_PATH = BuildConfig.APPLICATION_ID+".fileprovider";
+    public static final String BASE_PATH = BuildConfig.APPLICATION_ID+".pictures.fileprovider";
 
 
 
