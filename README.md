@@ -8,7 +8,8 @@ This action is highly configurable as it is evident that developers who will wan
 their application as much as possible. For this, provision has been made for simple configurations of the cropping interface.
 
 ### How do we use this library? 
-An example activity that uses the library is already provided [here](https://github.com/gbenroscience/ImagePicker/blob/master/imagepicker/src/main/java/com/itis/libs/imagepick/example/MainActivity.java)  
+An example activity that uses the library is already provided [here](https://github.com/gbenroscience/ImagePicker/blob/master/imagepicker/src/main/java/com/itis/libs/imagepick/example/MainActivity.java)
+
 
 The basic unit of action here is a well, <b>ImagePicker</b>.
 
@@ -35,7 +36,8 @@ Either way, add your own configuration by doing:
  .cropRectThickness(4);
  ```
  
- ![alt-text](https://github.com/gbenroscience/ImagePicker/blob/master/gitassets/recording-3.gif)
+ 
+ ![Here is a video of the cropping action](https://youtu.be/K14-8D27Xvc)
  
   
 
