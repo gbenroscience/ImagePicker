@@ -23,11 +23,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
         <activity
             android:name="com.itis.libs.imagepick.pages.ScalerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_scaler"
-            android:theme="@style/FullscreenTheme" />
+            android:resizeableActivity="false"
+            android:theme="@style/FullscreenTheme"
+            android:windowSoftInputMode="adjustPan|adjustResize"/>
+
         <provider
             android:name="com.itis.libs.imagepick.utils.PictureProvider"
             android:authorities="${applicationId}.pictures.fileprovider"
