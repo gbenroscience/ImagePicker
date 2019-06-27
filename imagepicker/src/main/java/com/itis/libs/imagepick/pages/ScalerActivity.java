@@ -107,8 +107,6 @@ public class ScalerActivity extends AppCompatActivity {
         }
 
 
-        Intent caller = getIntent();
-
         createStorageDir();
 
 
@@ -142,6 +140,8 @@ public class ScalerActivity extends AppCompatActivity {
                 selectImage(this);
 
                 break;
+                default:
+                    break;
 
         }
 
@@ -177,15 +177,18 @@ public class ScalerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                Log.d(ScalerActivity.class.getName() , "Crop---1");
                 File f = createImageFile();
-
+                Log.d(ScalerActivity.class.getName() , "Crop---2---> File will go to: "+f.getAbsolutePath());
                 String path = f.getAbsolutePath();
                 if (scalant.getCapturedBitmap() != null) {
+                    Log.d(ScalerActivity.class.getName() , "Crop---3---> Bitmap found");
                     try {
                         ImageUtilities.saveImage(scalant.getCapturedBitmap(), path);
                         Intent data = new Intent();
                         data.setData(Utils.getUri(f, ScalerActivity.this.getApplicationContext()));
                         data.putExtra(ImagePicker.RESULT_FILE_PATH, path);
+                        Log.d(ScalerActivity.class.getName() , "Crop---34--> Path saved to Intent");
                         setResult(RESULT_OK, data);
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -195,7 +198,7 @@ public class ScalerActivity extends AppCompatActivity {
                     try {
                         Intent data = new Intent();
                         ImageUtilities.saveImage(Bitmap.createBitmap(10, 10, Config.ARGB_8888), path);
-                        data.setData(Uri.fromFile(f));
+                        data.setData(Utils.getUri(f, ScalerActivity.this.getApplicationContext()));
                         data.putExtra(ImagePicker.RESULT_FILE_PATH, path);
                         setResult(RESULT_CANCELED, data);
                         Utils.showShortToast(ScalerActivity.this, "Couldn't get image! Please try again!");
@@ -510,6 +513,7 @@ if(show){
 
             return image;
         } catch (Exception e) {
+            e.printStackTrace();
             return null;
         }
     }

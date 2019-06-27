@@ -3,6 +3,7 @@ package com.itis.libs.imagepick.utils;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
+import android.util.Log;
 
 import com.itis.libs.imagepick.pages.ScalerActivity;
 
@@ -207,9 +208,14 @@ public class ImagePicker {
                     Uri uri = data.getData();
                     String path = data.getStringExtra(RESULT_FILE_PATH);
                     File imageFile = new File(path);
+
+                    Log.d(Utils.class.getName(), "file-path>>>>>: "+path );
+                    Log.d(Utils.class.getName(), "uri-path>>>>>: "+ uri.getPath() );
+
+
                     imagePickedListener.onImagePicked(uri,imageFile);
                 } else {
-                    imagePickedListener.onPickerError(ImagePickedListener.ERROR_LISTENER_NOT_SET);
+                    Utils.showShortToast(orginalCaller, "Please set the ImagePickedListener");
                 }
             } else {
                 imagePickedListener.onPickerError(ImagePickedListener.ERROR_BITMAP_NOT_LOADED);
