@@ -24,7 +24,11 @@ import androidx.core.content.FileProvider;
 public class Utils {
 
 
-    public static final String BASE_PATH = BuildConfig.APPLICATION_ID+".pictures.fileprovider";
+
+    public static final String AUTHORITY_SUFFIX = ".pictures.fileprovider";
+
+
+    public static final String BASE_PATH = BuildConfig.APPLICATION_ID+AUTHORITY_SUFFIX;
 
 
 
@@ -74,13 +78,13 @@ public class Utils {
     }
 
 
-    public static Uri getUri(File file, Context context){
+    public static Uri getUri(File file, Context appContext){
 
         try {
 
             Uri fileUri = FileProvider.getUriForFile(
-                    context,
-                    BASE_PATH,
+                    appContext,
+                    appContext.getPackageName()+AUTHORITY_SUFFIX,
                     file);
 
             Log.d(Utils.class.getName(), "uri>>>>>: "+fileUri.getPath() );

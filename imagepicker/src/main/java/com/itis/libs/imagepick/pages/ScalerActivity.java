@@ -169,7 +169,7 @@ public class ScalerActivity extends AppCompatActivity {
                     try {
                         ImageUtilities.saveImage(scalant.getCapturedBitmap(), path);
                         Intent data = new Intent();
-                        data.setData(Utils.getUri(f, ScalerActivity.this));
+                        data.setData(Utils.getUri(f, ScalerActivity.this.getApplicationContext()));
                         data.putExtra(ImagePicker.RESULT_FILE_PATH, path);
                         setResult(RESULT_OK, data);
                     } catch (Exception e) {
@@ -280,7 +280,10 @@ if(show){
             // Continue only if the File was successfully created
             if (photoFile != null) {
                 Utils.TEMP_IMAGE_FILE = photoFile;
-                currentUri = FileProvider.getUriForFile(this, Utils.BASE_PATH, Utils.TEMP_IMAGE_FILE);
+
+                Context appContext = getApplicationContext();
+
+                currentUri = FileProvider.getUriForFile(appContext, appContext.getPackageName()+ Utils.AUTHORITY_SUFFIX, Utils.TEMP_IMAGE_FILE);
 
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, currentUri);
                 if (!isOldVersion) {
