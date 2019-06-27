@@ -29,7 +29,7 @@
             android:name="com.itis.libs.imagepick.pages.ScalerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:resizeableActivity="false"
-            android:theme="@style/FullscreenTheme"
+            android:theme="@style/FullScreen"
             android:windowSoftInputMode="adjustPan|adjustResize"/>
 
         <provider
