@@ -1,5 +1,6 @@
 package com.itis.libs.imagepick.popups;
 
+import android.content.DialogInterface;
 import android.os.Build;
 import android.view.View;
 
@@ -48,6 +49,13 @@ public class Options extends TransparentFullScreenDialog {
             }
         });
 
+
+setOnCancelListener(new OnCancelListener() {
+    @Override
+    public void onCancel(DialogInterface dialog) {
+        activity.finish();
+    }
+});
 
     }
 

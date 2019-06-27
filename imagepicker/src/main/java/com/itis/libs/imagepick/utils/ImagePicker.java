@@ -48,7 +48,7 @@ public class ImagePicker {
 
     public static final ImagePicker createDefaultPicker() {
         ImagePicker imagePicker = new ImagePicker();
-        imagePicker.setCropperTheme("#16813B", "#000000", "#ffffff", true, true, true,2);
+        imagePicker.setCropperTheme("#16813B", "#000000", "#ffffff", true, true, true,4);
         return imagePicker;
     }
 
