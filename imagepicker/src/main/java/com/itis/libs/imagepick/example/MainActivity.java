@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements ImagePickedListen
 
         picker = ImagePicker.createPicker();
 
-        picker.bgColor("#000000").cropperBorderColor("#ffffff").headerColor("#008800").needsCrop(true).showPreview(true).showGrid(true).cropRectThickness(4);
+        picker.bgColor("#000000").cropperBorderColor("#FFFF99").headerColor("#000088").needsCrop(true).showPreview(true).showGrid(false).cropRectThickness(4);
 
         picker.setImagePickedListener(this);
 
