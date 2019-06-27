@@ -36,7 +36,7 @@
             android:grantUriPermissions="true">
             <meta-data xmlns:tools="http://schemas.android.com/tools"
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/my_file_paths"
+                android:resource="@xml/image_picker_paths"
                 tools:replace="android:resource" />
         </provider>
 
