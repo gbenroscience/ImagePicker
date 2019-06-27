@@ -99,6 +99,8 @@ public class ScalerActivity extends AppCompatActivity {
 
 
         createStorageDir();
+
+        Log.d(ScalerActivity.class.getName() , "Restarted ScalerActivity<<<--->>><<<--->>>");
         /**
          * Purge past crops
          */
@@ -188,12 +190,12 @@ public class ScalerActivity extends AppCompatActivity {
                         Intent data = new Intent();
                         data.setData(Utils.getUri(f, ScalerActivity.this.getApplicationContext()));
                         data.putExtra(ImagePicker.RESULT_FILE_PATH, path);
-                        Log.d(ScalerActivity.class.getName() , "Crop---34--> Path saved to Intent");
+                        Log.d(ScalerActivity.class.getName() , "Crop---4--> Path saved to Intent");
                         setResult(RESULT_OK, data);
+                        Log.d(ScalerActivity.class.getName() , "Crop---5--> Path saved to Intent");
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                    finish();
                 } else {
                     try {
                         Intent data = new Intent();
@@ -205,13 +207,20 @@ public class ScalerActivity extends AppCompatActivity {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                    finish();
                 }
+                finish();
 
             }
         });
 
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Log.d(Utils.class.getName(), "ScalerActivity resumes" );
     }
 
     private void init() {

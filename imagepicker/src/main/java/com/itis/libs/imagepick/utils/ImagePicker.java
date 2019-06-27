@@ -200,9 +200,9 @@ public class ImagePicker {
 
 
     public void handleActivityResult(int requestCode, int resultCode, Intent data, Activity orginalCaller) {
-
+        Log.d(Utils.class.getName(), "handle-activity called" );
         if (requestCode == this.requestCode) {
-
+            Log.d(Utils.class.getName(), "Seen requestcode." );
             if (resultCode == Activity.RESULT_OK) {
                 if (imagePickedListener != null) {
                     Uri uri = data.getData();
