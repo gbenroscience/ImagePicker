@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/app_green_scheme</color>
+    <color name="colorPrimaryDark">@color/app_dark_green_scheme</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="photo_crop_dim_color">#cc0000</color>
+    <color name="photo_crop_highlight_color">#ffffff</color>
+
+    <color name="status_error">#f6785d</color>
+    <color name="status_warn">#efc22c</color>
+    <color name="status_info">#3493d3</color>
+    <color name="status_success">#05c27d</color>
+
+    <color name="white">#FFFFFF</color>
+
+
+    <color name="app_darkest_green">#003300</color>
+    <color name="app_very_dark_green_scheme">#036525</color>
+    <color name="app_dark_green_scheme">#147636</color>
+    <color name="app_green_scheme">#16813B</color>
+    <color name="app_white_scheme">#F9F7F8</color>
+    <color name="app_red_scheme">#CC1517</color>
+
+
+    <color name="magenta">#0d8ea3</color>
+
+    <color name="orange_for_plus_btn">#ff9a42</color>
+    <color name="cream">#ffe5af</color>
+    <color name="orange_color">#ff7f00</color>
+    <color name="light_orange_color">#ff9f00</color>
+    <color name="dark_orange_color">#ee5f00</color>
+    <color name="darker_orange_color">#dd5f00</color>
+    <color name="white_color">#ffffff</color>
+    <color name="black_color">#000000</color>
+
+    <color name="red_color">#ff0000</color>
+    <color name="red_color_light">#0Dff0000</color>
+
+    <color name="dialog_bg">#f8f8f9</color>
+
+    <color name="blue_color">#0000ff</color>
+    <color name="light_blue_color">#7777ff</color>
+    <color name="lighter_blue_color">#e7f5fe</color>
+    <color name="custom_light_blue_color">#ddddff</color>
+    <color name="green_color">#00ff00</color>
+    <color name="lighter_green_color">#ddffdd</color>
+    <color name="light_green_color">#99ff99</color>
+    <color name="dark_green_color">#009900</color>
+
+    <color name="dark_blue_color">#0000bb</color>
+    <color name="ash">#eeeeff</color>
+    <color name="light_gray_color">#cccccc</color>
+    <color name="lighter_gray_color">#eeeeee</color>
+    <color name="chat_bottom_light_gray">#dddddd</color>
+    <color name="very_light_gray_color">#bbbbbb</color>
+    <color name="gray_color">#aaaaaa</color>
+    <color name="dark_gray_color">#666666</color>
+    <color name="darker_gray_color">#333333</color>
+
+    <color name="brick_red">#7e0314</color>
+    <color name="gray_color_for_search_fields">#f9f9f9</color>
+
+    <color name="silver">#C0C0C0</color>
+    <color name="action_bar_color">@color/colorPrimary</color>
+    <color name="selector">@color/white_color</color>
+    <color name="date_color">@color/cream</color>
+    <color name="yellow">#ffff00</color>
+
+    <color name="midnight_blue">#191970</color>
+    <color name="mint_cream">#e4fffa</color>
+
+    <color name="table_cell_shade_of_green">#ecffec</color>
+    <color name="table_cell_shade_of_deep_green">#002000</color>
+
+    <color name="black_overlay">#66000000</color>
+
+
+</resources>

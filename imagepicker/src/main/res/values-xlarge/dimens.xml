@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="action_bar_height">@dimen/_32sdp</dimen>
+    <dimen name="action_bar_item_height">@dimen/_14sdp</dimen>
+    <dimen name="action_bar_fonts">@dimen/_12ssp</dimen>
+
+
+
+
+
+    <dimen name="action_bar_screen_margin">@dimen/_6sdp</dimen>
+
+    <dimen name="action_bar_horizontal_margin">@dimen/_18sdp</dimen>
+
+
+</resources>

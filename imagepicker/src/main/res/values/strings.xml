@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ImagePicker</string>
+
+    <string name="title_activity_scaler">ScalerActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+
+    <string name="image_chooser">Image Chooser</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+</resources>

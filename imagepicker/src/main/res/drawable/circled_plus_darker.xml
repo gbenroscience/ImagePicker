@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="@dimen/_48sdp"
+    android:height="@dimen/_48sdp"
+    android:viewportHeight="100"
+    android:viewportWidth="100">
+
+
+    <!--
+              <path
+                  android:fillColor="#ffffff"
+                  android:strokeColor="@color/black_color"
+                  android:strokeWidth="1"
+                  android:pathData="m0 0 h100 v100 h-100 v-100 z "/>
+-->
+
+    <!--Draw a circle with a transparent background-->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="m50 3 a47 47, 0 1,0 0.1,0 z"
+        android:strokeColor="@color/app_dark_green_scheme"
+        android:strokeWidth="5" />
+
+
+    <!--Draw the vertical line of the plus, return to the center of  the line, go to the
+    start of the horizontal line, then draw it fully also-->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:pathData="m50 30 v40 v-20 h-20 h40"
+        android:strokeColor="@color/app_dark_green_scheme"
+        android:strokeWidth="5" />
+
+
+</vector>
+
+
+    <!--
+
+     Drawing a rounded rectangle:
+
+    <path d="M100,100 h200 a20,20 0 0 1 20,20 v200 a20,20 0 0 1 -20,20 h-200 a20,
+    20 0 0 1 -20,-20 v-200 a20,20 0 0 1 20,-20 z" />
+    Explanation:
+
+    M100,100: Move To Point(100,100)
+
+    h200: Draw A 200px Horizontal Line From Where We Are
+
+    a20,20 0 0 1 20,20: Draw An Arc With 20px X Radius, 20px Y Radius, Clockwise, To A Point With 20px Difference In X And Y Axis
+
+    v200: Draw A 200px Vertical Line From Where We Are
+
+    a20,20 0 0 1 -20,20: Draw An Arc With 20px X And Y Radius, Clockwise, To A Point With -20px Difference In X And 20px Difference In Y Axis
+
+    h-200: Draw A -200px Horizontal Line From Where We Are
+
+    a20,20 0 0 1 -20,-20: Draw An Arc With 20px X And Y Radius, Clockwise, To A Point With -20px Difference In X And -20px Difference In Y Axis
+
+    v-200: Draw A -200px Vertical Line From Where We Are
+
+    a20,20 0 0 1 20,-20: Draw An Arc With 20px X And Y Radius, Clockwise, To A Point With 20px Difference In X And -20px Difference In Y Axis
+
+    z: Close The Path
+    -->

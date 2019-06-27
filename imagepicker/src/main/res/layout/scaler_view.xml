@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+<View
+    android:id="@+id/header"
+    android:layout_width="0dp"
+    android:layout_height="@dimen/action_bar_height"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:background="@color/colorPrimary"
+    />
+
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/back_btn"
+        android:layout_width="@dimen/action_bar_item_height"
+        android:layout_height="@dimen/action_bar_item_height"
+        app:srcCompat="@drawable/ic_back_white"
+        app:layout_constraintTop_toTopOf="@id/header"
+        app:layout_constraintBottom_toBottomOf="@id/header"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginLeft="@dimen/action_bar_screen_margin"
+        android:layout_marginStart="@dimen/action_bar_screen_margin"
+
+        />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/rotate_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/header"
+        app:layout_constraintBottom_toBottomOf="@id/header"
+        app:layout_constraintRight_toLeftOf="@id/crop_image"
+        app:layout_constraintEnd_toStartOf="@id/crop_image"
+        android:layout_marginRight="@dimen/action_bar_horizontal_margin"
+        android:layout_marginEnd="@dimen/action_bar_horizontal_margin"
+        android:background="@android:color/transparent"
+        app:srcCompat="@android:drawable/ic_menu_rotate"
+        android:textColor="@color/ash"  />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/crop_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawablePadding="5sp"
+        android:drawableRight="@android:drawable/ic_menu_crop"
+        android:drawableEnd="@android:drawable/ic_menu_crop"
+        android:gravity="start|center_vertical"
+        android:background="@android:color/transparent"
+
+        app:layout_constraintTop_toTopOf="@id/header"
+        app:layout_constraintBottom_toBottomOf="@id/header"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="@dimen/action_bar_screen_margin"
+        android:layout_marginEnd="@dimen/action_bar_screen_margin"
+        android:text="CROP"
+        android:fontFamily="monospace"
+        android:textColor="@color/ash"
+        android:textStyle="bold"
+        android:textSize="@dimen/action_bar_fonts" />
+
+    <com.itis.libs.imagepick.views.ImageScalant
+        android:id="@+id/crop_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/black_color"
+
+
+        />
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

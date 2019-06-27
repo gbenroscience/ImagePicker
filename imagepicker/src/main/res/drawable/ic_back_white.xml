@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="25dp"
+    android:height="40dp"
+    android:viewportHeight="40"
+    android:viewportWidth="25">
+
+<!--
+    <path
+        android:fillColor="#ffffff"
+        android:strokeColor="@color/black_color"
+        android:strokeWidth="0"
+        android:pathData="m0 0 v40 h25 v-40 h-25"
+        />
+-->
+
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="@color/white_color"
+        android:strokeWidth="5"
+        android:strokeLineCap="round"
+        android:pathData="m20 5 l-15 15 l15 15"
+        />
+
+
+</vector>
+
+
+    <!--
+
+     Drawing a rounded rectangle:
+
+    <path d="M100,100 h200 a20,20 0 0 1 20,20 v200 a20,20 0 0 1 -20,20 h-200 a20,
+    20 0 0 1 -20,-20 v-200 a20,20 0 0 1 20,-20 z" />
+    Explanation:
+
+    M100,100: Move To Point(100,100)
+
+    h200: Draw A 200px Horizontal Line From Where We Are
+
+    a20,20 0 0 1 20,20: Draw An Arc With 20px X Radius, 20px Y Radius, Clockwise, To A Point With 20px Difference In X And Y Axis
+
+    v200: Draw A 200px Vertical Line From Where We Are
+
+    a20,20 0 0 1 -20,20: Draw An Arc With 20px X And Y Radius, Clockwise, To A Point With -20px Difference In X And 20px Difference In Y Axis
+
+    h-200: Draw A -200px Horizontal Line From Where We Are
+
+    a20,20 0 0 1 -20,-20: Draw An Arc With 20px X And Y Radius, Clockwise, To A Point With -20px Difference In X And -20px Difference In Y Axis
+
+    v-200: Draw A -200px Vertical Line From Where We Are
+
+    a20,20 0 0 1 20,-20: Draw An Arc With 20px X And Y Radius, Clockwise, To A Point With 20px Difference In X And -20px Difference In Y Axis
+
+    z: Close The Path
+    -->

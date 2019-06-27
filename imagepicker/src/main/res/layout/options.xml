@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.15"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.85"
+        />
+
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="@dimen/_250sdp"
+        android:layout_height="@dimen/_150sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/guide_1"
+        app:layout_constraintStart_toStartOf="@id/guide_1"
+        app:layout_constraintRight_toRightOf="@id/guide_2"
+        app:layout_constraintEnd_toEndOf="@id/guide_2"
+        android:layout_marginBottom="@dimen/_24sdp"
+        app:cardBackgroundColor="@color/lighter_gray_color"
+        app:cardCornerRadius="@dimen/_2sdp"
+
+
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_4sdp"
+            >
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="157dp" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:text="@string/image_chooser"
+                android:textColor="@color/black_color"
+                android:textSize="@dimen/action_bar_fonts"
+                android:textStyle="bold"
+
+                />
+
+
+
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/border"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50sdp"
+                app:layout_constraintTop_toBottomOf="@id/title"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_24sdp"
+                android:layout_marginStart="@dimen/_24sdp"
+                android:layout_marginLeft="@dimen/_24sdp"
+                android:layout_marginEnd="@dimen/_24sdp"
+                android:layout_marginRight="@dimen/_24sdp"
+
+                />
+
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="@dimen/_2sdp"
+                android:layout_height="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/border"
+                app:layout_constraintBottom_toBottomOf="@id/border"
+                android:background="@color/black_color"
+
+
+
+                />
+
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/camera_option"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                app:layout_constraintLeft_toLeftOf="@id/border"
+                app:layout_constraintStart_toStartOf="@id/border"
+                app:layout_constraintRight_toLeftOf="@id/divider"
+                app:layout_constraintEnd_toStartOf="@id/divider"
+                app:layout_constraintTop_toTopOf="@id/border"
+                app:layout_constraintBottom_toBottomOf="@id/border"
+                app:srcCompat="@drawable/ic_menu_camera"
+                android:adjustViewBounds="true"
+                />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/gallery_option"
+                android:layout_width="@dimen/_32sdp"
+                android:layout_height="@dimen/_32sdp"
+                app:layout_constraintLeft_toRightOf="@id/divider"
+                app:layout_constraintStart_toEndOf="@id/divider"
+                app:layout_constraintEnd_toEndOf="@id/border"
+                app:layout_constraintRight_toRightOf="@id/border"
+                app:layout_constraintTop_toTopOf="@id/camera_option"
+                app:layout_constraintBottom_toBottomOf="@id/camera_option"
+                app:srcCompat="@drawable/ic_menu_file"
+                app:tint="@color/black_color"
+                android:adjustViewBounds="true"
+                />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/camera_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/border"
+                app:layout_constraintLeft_toLeftOf="@id/camera_option"
+                app:layout_constraintStart_toStartOf="@id/camera_option"
+                app:layout_constraintRight_toRightOf="@id/camera_option"
+                app:layout_constraintEnd_toEndOf="@id/camera_option"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:text="@string/camera"
+                android:textColor="@color/black_color"
+                android:textSize="@dimen/action_bar_fonts"
+                android:textStyle="bold"
+
+                />
+
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/gallery_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/border"
+                app:layout_constraintLeft_toLeftOf="@id/gallery_option"
+                app:layout_constraintStart_toStartOf="@id/gallery_option"
+                app:layout_constraintRight_toRightOf="@id/gallery_option"
+                app:layout_constraintEnd_toEndOf="@id/gallery_option"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:text="@string/gallery"
+                android:textColor="@color/black_color"
+                android:textSize="@dimen/action_bar_fonts"
+                android:textStyle="bold"
+
+                />
+
+
+
+
+                />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
