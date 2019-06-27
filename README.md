@@ -1,6 +1,44 @@
 # ImagePicker
 A simple image picker and cropper that works!
 
+
+## Features
+
+1. Pick images from the Camera and the Gallery over a wide range of Android APIs (tested on API 16 to API 28)
+2. Simple and Efficient Cropping Tool
+3. Highly configurable especially when changing cropper properties. Use your app colors on the cropper.
+4. Get the image from the Uri or the File, depending on what suits you fine!
+
+## Gradle
+
+```
+dependencies {
+	        implementation 'com.github.gbenroscience:ImagePicker:${latest_version}'
+	}
+```
+
+<b><i>Replace ${latest_version} with the latest version code.</i></b>
+
+
+## Sample Images
+
+
+ Here are some images:
+ 
+ 
+ <p align="center">
+  <img src="gitassets/options_chooser.png" width="350" title="hover text">
+  <img src="gitassets/Screenshot_1561626116.png" width="350" title="hover text">
+  <img src="gitassets/blue_theme.png" width="350" title="hover text">
+  <img src="gitassets/purple_theme.png" width="350" title="hover text">
+  <img src="gitassets/Screenshot_1561628597.png" width="350" title="hover text">
+  <img src="gitassets/recording-3.gif" width="350" title="hover text">
+</p>
+
+
+
+### Aims and Targets
+
 ImagePicker does not start out by trying to solve a lot of problems. It tries to do one thing; and do it well; amd that is:
 Pick and crop images from the camera or gallery across a wide range of Android OS versions.
 
@@ -35,20 +73,6 @@ Either way, add your own configuration by doing:
  .showGrid(true)
  .cropRectThickness(4);
  ```
- Here are some images:
- 
- 
- <p align="center">
-  <img src="gitassets/options_chooser.png" width="350" title="hover text">
-  <img src="gitassets/Screenshot_1561626116.png" width="350" title="hover text">
-  <img src="gitassets/blue_theme.png" width="350" title="hover text">
-  <img src="gitassets/purple_theme.png" width="350" title="hover text">
-  <img src="gitassets/Screenshot_1561628597.png" width="350" title="hover text">
-  <img src="gitassets/recording-3.gif" width="350" title="hover text">
- 
-
-</p>
-
 
 Now, let your activity implement <b>ImagePickedListener</b> and provide concrete definitions for its methods in the body of the 
 Activity:
