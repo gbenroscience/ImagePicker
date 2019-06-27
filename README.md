@@ -35,13 +35,20 @@ Either way, add your own configuration by doing:
  .showGrid(true)
  .cropRectThickness(4);
  ```
+ Here are some images:
  
  
- ![](https://youtu.be/K14-8D27Xvc)
+ <p align="center">
+  <img src="gitassets/Screenshot_1561626064.png" width="350" title="hover text">
+  <img src="gitassets/Screenshot_1561626111.png" width="350" title="hover text">
+  <img src="gitassets/Screenshot_1561626116.png" width="350" title="hover text">
+  <img src="gitassets/Screenshot_1561628591.png" width="350" title="hover text">
+  <img src="gitassets/Screenshot_1561628597.png" width="350" title="hover text">
+  <img src="gitassets/recording-3.gif" width="350" title="hover text">
  
- <a href="https://youtu.be/K14-8D27Xvc" target="_blank"></a>
- 
-  
+
+</p>
+
 
 Now, let your activity implement <b>ImagePickedListener</b> and provide concrete definitions for its methods in the body of the 
 Activity:
