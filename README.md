@@ -39,10 +39,10 @@ Either way, add your own configuration by doing:
  
  
  <p align="center">
-  <img src="gitassets/Screenshot_1561626064.png" width="350" title="hover text">
-  <img src="gitassets/Screenshot_1561626111.png" width="350" title="hover text">
+  <img src="gitassets/options_chooser.png" width="350" title="hover text">
   <img src="gitassets/Screenshot_1561626116.png" width="350" title="hover text">
-  <img src="gitassets/Screenshot_1561628591.png" width="350" title="hover text">
+  <img src="gitassets/blue_theme.png" width="350" title="hover text">
+  <img src="gitassets/purple_theme.png" width="350" title="hover text">
   <img src="gitassets/Screenshot_1561628597.png" width="350" title="hover text">
   <img src="gitassets/recording-3.gif" width="350" title="hover text">
  
