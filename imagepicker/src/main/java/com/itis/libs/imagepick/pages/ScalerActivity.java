@@ -64,7 +64,7 @@ public class ScalerActivity extends AppCompatActivity {
     AppCompatButton cropBtn;
     AppCompatImageView backBtn;
 
-    View header;
+    private View header;
 
 
     private int requestCode;
@@ -123,7 +123,7 @@ public class ScalerActivity extends AppCompatActivity {
 
                 break;
             case ImagePicker.OPEN_CHOOSER:
-
+                showHeader(false);
                 selectImage(this);
 
                 break;
@@ -209,6 +209,20 @@ public class ScalerActivity extends AppCompatActivity {
 
     }
 
+    public void showHeader(boolean show){
+if(show){
+    header.setVisibility(View.VISIBLE);
+    cropBtn.setVisibility(View.VISIBLE);
+    rotateButton.setVisibility(View.VISIBLE);
+    backBtn.setVisibility(View.VISIBLE);
+
+}else{
+    header.setVisibility(View.GONE);
+    cropBtn.setVisibility(View.GONE);
+    rotateButton.setVisibility(View.GONE);
+    backBtn.setVisibility(View.GONE);
+}
+    }
 
     @Override
     protected void onDestroy() {

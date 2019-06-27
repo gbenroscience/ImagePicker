@@ -57,6 +57,14 @@ setOnCancelListener(new OnCancelListener() {
     }
 });
 
+setOnDismissListener(new OnDismissListener() {
+    @Override
+    public void onDismiss(DialogInterface dialog) {
+        activity.showHeader(true);
+
+    }
+});
+
     }
 
 

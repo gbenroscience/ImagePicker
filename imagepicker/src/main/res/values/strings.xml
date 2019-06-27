@@ -9,4 +9,8 @@
     <string name="image_chooser">Image Chooser</string>
     <string name="camera">Camera</string>
     <string name="gallery">Gallery</string>
+    <string name="crop_text">CROP</string>
+
+
+
 </resources>
