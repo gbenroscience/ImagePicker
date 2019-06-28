@@ -30,6 +30,8 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:resizeableActivity="false"
             android:theme="@style/FullScreen"
+            android:process=":image_cropper"
+            android:launchMode="singleTask"
             android:windowSoftInputMode="adjustPan|adjustResize"/>
 
         <provider
