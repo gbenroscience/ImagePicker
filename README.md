@@ -9,6 +9,7 @@ A simple image picker and cropper that works!
 3. Highly configurable especially when changing cropper properties. Use your app colors on the cropper.
 4. Get the image from the Uri or the File, depending on what suits you fine!
 
+
 ## Gradle
 
 ```
@@ -89,6 +90,38 @@ Activity:
 
     }
 ```
+
+
+### MODES OF OPERATION
+
+ImagePicker can be called in 3 ways:
+
+1. Direct calls to camera for images(Opens the camera directly from your app)
+2. Direct calls to the gallery(Opens the Gallery directly from your app)
+3. Chooser mode(Shows a simple dialog asking if you would open either the camera or the gallery)
+
+#### Open the camera
+
+To use any ImagePicker object, say `picker` (which you have configured as you wish), to open the device camera directly from an Activity; say `activity` in your application, all you need is:
+
+```java
+picker.openCamera(activity)
+```
+#### Open the gallery
+
+To use any ImagePicker object, say `picker` (which you have configured as you wish), to open the device's image gallery directly from an Activity; say `activity` in your application, all you need is:
+
+```java
+picker.openGallery(activity)
+```
+#### Choose between opening the gallery and the camera
+
+To use any ImagePicker object, say `picker` (which you have configured as you wish), to show a simple popup which presents the user with the option to choose between opening the device's image gallery and the camera from an Activity; say `activity` in your application, all you need is:
+
+```java
+picker.openChooser(activity)
+```
+        
   
     
 
