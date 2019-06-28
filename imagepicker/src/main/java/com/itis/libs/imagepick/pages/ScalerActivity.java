@@ -208,6 +208,7 @@ public class ScalerActivity extends AppCompatActivity {
         Intent data = new Intent();
         data.putExtra(ImagePicker.RESULT_FILE_PATH, "No such file");
         setResult(RESULT_CANCELED, data);
+        finish();
     }
 
     @Override
@@ -434,7 +435,6 @@ public class ScalerActivity extends AppCompatActivity {
                 takePhotoWithCamera();
             } else {
                 Utils.showLongToast(ScalerActivity.this, "Permission denied");
-                File f = createImageFile();
                 setErrorResult();
             }
         } else if (requestCode == Conf.MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE) {
@@ -444,7 +444,6 @@ public class ScalerActivity extends AppCompatActivity {
 
             } else {
                 Utils.showLongToast(ScalerActivity.this, "Permission denied.");
-                File f = createImageFile();
                 setErrorResult();
             }
         } else {
