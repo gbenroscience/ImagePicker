@@ -88,8 +88,8 @@ public class ScalerActivity extends AppCompatActivity {
         getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
+        // setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        // setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
 
 
         setContentView(R.layout.scaler_view);
