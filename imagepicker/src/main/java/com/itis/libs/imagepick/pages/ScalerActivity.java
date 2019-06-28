@@ -88,8 +88,8 @@ public class ScalerActivity extends AppCompatActivity {
         getWindow().setSoftInputMode(
                 WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
-        // setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        // setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
 
 
         setContentView(R.layout.scaler_view);
@@ -100,7 +100,6 @@ public class ScalerActivity extends AppCompatActivity {
 
         createStorageDir();
 
-        Log.d(ScalerActivity.class.getName() , "Restarted ScalerActivity<<<--->>><<<--->>>");
         /**
          * Purge past crops
          */
@@ -109,12 +108,8 @@ public class ScalerActivity extends AppCompatActivity {
         }
 
 
-        createStorageDir();
-
-
         if (this.requestCode == -1) {
-            setResult(Activity.RESULT_CANCELED);
-            finish();
+            setErrorResult();
             return;
         }
 
@@ -142,8 +137,8 @@ public class ScalerActivity extends AppCompatActivity {
                 selectImage(this);
 
                 break;
-                default:
-                    break;
+            default:
+                break;
 
         }
 
@@ -179,30 +174,23 @@ public class ScalerActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Log.d(ScalerActivity.class.getName() , "Crop---1");
                 File f = createImageFile();
-                Log.d(ScalerActivity.class.getName() , "Crop---2---> File will go to: "+f.getAbsolutePath());
                 String path = f.getAbsolutePath();
                 if (scalant.getCapturedBitmap() != null) {
-                    Log.d(ScalerActivity.class.getName() , "Crop---3---> Bitmap found");
+
                     try {
                         ImageUtilities.saveImage(scalant.getCapturedBitmap(), path);
                         Intent data = new Intent();
                         data.setData(Utils.getUri(f, ScalerActivity.this.getApplicationContext()));
                         data.putExtra(ImagePicker.RESULT_FILE_PATH, path);
-                        Log.d(ScalerActivity.class.getName() , "Crop---4--> Path saved to Intent");
                         setResult(RESULT_OK, data);
-                        Log.d(ScalerActivity.class.getName() , "Crop---5--> Path saved to Intent");
+
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                 } else {
                     try {
-                        Intent data = new Intent();
-                        ImageUtilities.saveImage(Bitmap.createBitmap(10, 10, Config.ARGB_8888), path);
-                        data.setData(Utils.getUri(f, ScalerActivity.this.getApplicationContext()));
-                        data.putExtra(ImagePicker.RESULT_FILE_PATH, path);
-                        setResult(RESULT_CANCELED, data);
+                        setErrorResult();
                         Utils.showShortToast(ScalerActivity.this, "Couldn't get image! Please try again!");
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -216,15 +204,18 @@ public class ScalerActivity extends AppCompatActivity {
 
     }
 
+    private void setErrorResult() {
+        Intent data = new Intent();
+        data.putExtra(ImagePicker.RESULT_FILE_PATH, "No such file");
+        setResult(RESULT_CANCELED, data);
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
-
-        Log.d(Utils.class.getName(), "ScalerActivity resumes" );
     }
 
     private void init() {
-
 
         scalant = findViewById(R.id.crop_view);
         cropBtn = findViewById(R.id.crop_image);
@@ -236,19 +227,19 @@ public class ScalerActivity extends AppCompatActivity {
 
     }
 
-    public void showHeader(boolean show){
-if(show){
-    header.setVisibility(View.VISIBLE);
-    cropBtn.setVisibility(View.VISIBLE);
-    rotateButton.setVisibility(View.VISIBLE);
-    backBtn.setVisibility(View.VISIBLE);
+    public void showHeader(boolean show) {
+        if (show) {
+            header.setVisibility(View.VISIBLE);
+            cropBtn.setVisibility(View.VISIBLE);
+            rotateButton.setVisibility(View.VISIBLE);
+            backBtn.setVisibility(View.VISIBLE);
 
-}else{
-    header.setVisibility(View.GONE);
-    cropBtn.setVisibility(View.GONE);
-    rotateButton.setVisibility(View.GONE);
-    backBtn.setVisibility(View.GONE);
-}
+        } else {
+            header.setVisibility(View.GONE);
+            cropBtn.setVisibility(View.GONE);
+            rotateButton.setVisibility(View.GONE);
+            backBtn.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -310,7 +301,7 @@ if(show){
 
                 Context appContext = getApplicationContext();
 
-                currentUri = FileProvider.getUriForFile(appContext, appContext.getPackageName()+ Utils.AUTHORITY_SUFFIX, Utils.TEMP_IMAGE_FILE);
+                currentUri = FileProvider.getUriForFile(appContext, appContext.getPackageName() + Utils.AUTHORITY_SUFFIX, Utils.TEMP_IMAGE_FILE);
 
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, currentUri);
                 if (!isOldVersion) {
@@ -386,21 +377,21 @@ if(show){
 
             if (resultCode == RESULT_OK) {
 
-                if (props.isNeedsCrop()) {//Pass to the cropper
-                    if (requestCode == ScalerActivity.SELECT_PICTURE_FROM_CAMERA) {
-                        process(currentUri , size[0]);
-                    } else if (requestCode == ScalerActivity.SELECT_PICTURE_FROM_GALLERY) {
-                        currentUri = data.getData();
-                        process(currentUri , size[0]);
-                    }
-                } else {//Send to the original caller
+                //currentUri needs to be fetched from the Intent for Gallery alone.
+                if (requestCode == ScalerActivity.SELECT_PICTURE_FROM_GALLERY) {
+                    currentUri = data.getData();
+                }
+
+                //User asked for cropping so pass the image to the cropper
+                if (props.isNeedsCrop()) {
+                    process(currentUri, size[0]);
+                } else {//Else, send to the original caller
 
                     String path = Utils.TEMP_IMAGE_FILE.getAbsolutePath();
 
                     if (requestCode == ScalerActivity.SELECT_PICTURE_FROM_GALLERY) {
-                        currentUri = data.getData();
                         Bitmap image = ImageUtilities.decodeSampledBitmapFromUri(ScalerActivity.this, currentUri, size[0], true);
-                        ImageUtilities.saveImage(image , path);
+                        ImageUtilities.saveImage(image, path);
                     }
 
                     data = new Intent();
@@ -411,8 +402,8 @@ if(show){
                 }
 
             } else {
-                setResult(RESULT_CANCELED, null);
-                Log.d(getClass().getName(), "The file uri for the image is not found... 2");
+                setErrorResult();
+                Log.d(getClass().getName(), "The uri for the image is not found... 2");
                 finish();
             }
 
@@ -421,13 +412,13 @@ if(show){
 
     }
 
-    private void process(Uri uri, int size){
-       Bitmap image = ImageUtilities.decodeSampledBitmapFromUri(this, uri, size, true);
-        if(image != null){
+    private void process(Uri uri, int size) {
+        Bitmap image = ImageUtilities.decodeSampledBitmapFromUri(this, uri, size, true);
+        if (image != null) {
             scalant.setImage(image);
             loadProps();
-        }else{
-            setResult(RESULT_CANCELED, null);
+        } else {
+            setErrorResult();
             finish();
         }
 
@@ -443,6 +434,8 @@ if(show){
                 takePhotoWithCamera();
             } else {
                 Utils.showLongToast(ScalerActivity.this, "Permission denied");
+                File f = createImageFile();
+                setErrorResult();
             }
         } else if (requestCode == Conf.MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE) {
             if (grantResults.length == 1 &&
@@ -451,6 +444,8 @@ if(show){
 
             } else {
                 Utils.showLongToast(ScalerActivity.this, "Permission denied.");
+                File f = createImageFile();
+                setErrorResult();
             }
         } else {
             super.onRequestPermissionsResult(requestCode, permissions, grantResults);
